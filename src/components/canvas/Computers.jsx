@@ -7,14 +7,24 @@ import CanvasLoader from '../Loader';
 const Computers = () => {
 
   //import GLTF model
-  const computer = useGLTF('/public/desktop_pc/scene.gltf')
+  const computer = useGLTF('/public/desktop_pc/scene.gltf');
 
   return (
     
     <mesh>
       {/* create light */}
-      <hemisphereLight intensity={0.15} groundColor="black"/>
+      <hemisphereLight intensity={0.15} 
+      groundColor='black'/>
+       <spotLight
+        position={[-20, 50, 10]}
+        angle={0.12}
+        penumbra={1}
+        intensity={1}
+        castShadow
+        shadow-mapSize={1024}
+      />
       <pointLight intensity={1}/>
+      
 
     {/* Call for computer object */}
     <primitive 
@@ -24,8 +34,8 @@ const Computers = () => {
     rotation={[-0.01, -0.2, -0.1]}
     />
     </mesh>
-  )
-}
+  );
+};
 
 
 //Draw the canvas to place the 3D model in
@@ -35,6 +45,7 @@ const ComputersCanvas = () => {
    <Canvas 
     frameloop="demand"
     shadows
+    dpr={[1, 2]}
     camera={{position: [20, 3, 5], fov: 25}} //x,y,z fov
     gl={{preserveDrawingBuffer:true}}
     >
@@ -51,9 +62,9 @@ const ComputersCanvas = () => {
        <Preload all/> 
    </Canvas>
 
-  )
-}
+  );
+};
 
 
 
-export default ComputersCanvas
+export default ComputersCanvas;
