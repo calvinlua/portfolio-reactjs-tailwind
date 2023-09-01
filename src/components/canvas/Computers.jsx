@@ -1,6 +1,6 @@
 import { Suspense, useEffect, useState} from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Preload, useGLTF } from '@react-three/drei'; //helper class 
+import { OrbitControls, Preload, SpotLight, useGLTF } from '@react-three/drei'; //helper class 
 import { extend } from '@react-three/fiber'
 
 import CanvasLoader from '../Loader';
@@ -13,11 +13,12 @@ const Computers = () => {
     
     <mesh>
       {/* create light */}
-      <hemisphereLight intensity={0.15} 
+      <hemisphereLight intensity={0.6} 
       groundColor='black'/>
-       <spotLight
-        position={[-20, 50, 10]}
-        angle={0.12}
+       <SpotLight
+        position={[2, 2, -3]}
+        angle={1}
+        // anglePower={1}
         penumbra={1}
         intensity={1}
         castShadow
