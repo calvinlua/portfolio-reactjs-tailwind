@@ -4,7 +4,9 @@ import { OrbitControls, Preload, SpotLight, useGLTF } from '@react-three/drei'; 
 import { extend } from '@react-three/fiber'
 
 import CanvasLoader from '../Loader';
-const Computers = () => {
+
+//take isMobile as a prop
+const Computers = ({isMobile}) => {
 
   //import GLTF model
   const computer = useGLTF('/public/desktop_pc/scene.gltf');
@@ -30,8 +32,8 @@ const Computers = () => {
     {/* Call for computer object */}
     <primitive 
     object={computer.scene}
-    scale={0.75}
-    position={[0,-3.25, -1.5]} //x,y,z
+    scale={ isMobile? 0.7: 0.75}
+    position={isMobile? [0,-3,-2.2] : [0,-3.25, -1.5]} //x,y,z
     rotation={[-0.01, -0.2, -0.1]}
     />
     </mesh>
@@ -41,8 +43,32 @@ const Computers = () => {
 
 //Draw the canvas to place the 3D model in
 const ComputersCanvas = () => {
-  return(
+  const [isMobile,setIsMobile] = useState(false);
 
+    useEffect(()=>{
+      //Add a listener for listening to changes to the screen size
+      const mediaQuery = window.matchMedia('(max-width:500px)');
+
+      //set the initial value of the 'isMobile' state variable
+      setIsMobile(mediaQuery.matches);
+
+      //Define a callback function to handle changes to the media query
+      const handleMediaQueryChange=(event) =>{
+        setIsMobile(event.matches);
+      }
+
+      //Add a callback function as a listener for changes to the media query 
+      mediaQuery.addEventListener('change',handleMediaQueryChange);
+
+      //Remove the listener when the component is unmounted
+      return() => {
+        mediaQuery.removeEventListener('change',handleMediaQueryChange);
+
+      }
+    },[])
+  
+  return(
+       
    <Canvas 
     frameloop="demand"
     shadows
@@ -54,11 +80,12 @@ const ComputersCanvas = () => {
         {/* React Loader */}
         <Suspense fallback={<CanvasLoader />}>
           <OrbitControls
+          enablePan={false}
           enableZoom={false} 
           maxPolarAngle={Math.PI/2} //enable left and right turn only >> angle
           minPolarAngle={Math.PI/2}
           />
-          <Computers/>
+          <Computers isMobile={isMobile}/>
        </Suspense>
        <Preload all/> 
    </Canvas>
