@@ -8,14 +8,15 @@ import CanvasLoader from '../Loader';
 //take isMobile as a prop
 const Computers = ({isMobile}) => {
 
-  //import GLTF model
-  const computer = useGLTF('/public/desktop_pc/scene.gltf');
+  //import GLTF model - import the scene
+  const computer = useGLTF('./desktop_pc/scene.gltf');
+  console.log(isMobile);
 
   return (
     
     <mesh>
       {/* create light */}
-      <hemisphereLight intensity={0.6} 
+      <hemisphereLight intensity={0.8} 
       groundColor='black'/>
        <SpotLight
         position={[2, 2, -3]}
@@ -32,8 +33,8 @@ const Computers = ({isMobile}) => {
     {/* Call for computer object */}
     <primitive 
     object={computer.scene}
-    scale={ isMobile? 0.7: 0.75}
-    position={isMobile? [0,-3,-2.2] : [0,-3.25, -1.5]} //x,y,z
+    scale={ isMobile? 0.5 : 0.9}
+    position={isMobile? [0,-3,-1] : [0,-3.25, -1.5]} //x,y,z
     rotation={[-0.01, -0.2, -0.1]}
     />
     </mesh>
@@ -64,7 +65,7 @@ const ComputersCanvas = () => {
       return() => {
         mediaQuery.removeEventListener('change',handleMediaQueryChange);
 
-      }
+      };
     },[])
   
   return(
