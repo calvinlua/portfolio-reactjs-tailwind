@@ -22,6 +22,10 @@ import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
 import hyundai from "./company/hyundai.jpg";
+import dsp from "./company/dsp.jpeg";
+import jks from "./company/jks.jpeg";
+import boilermech from "./company/boilermech.jpeg";
+import dindings from "./company/dindings.jpeg";
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
@@ -54,6 +58,10 @@ export {
   typescript,
   threejs,
   hyundai,
+  dsp,
+  jks,
+  boilermech,
+  dindings,
   meta,
   shopify,
   starbucks,
