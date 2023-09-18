@@ -128,6 +128,7 @@ const experiences = [
     iconBg: "#FFFFFF",
     date: "Oct 2019 - Dec 2019",
     points: [
+      "Internship",
       "Involved in Maintanence in smart machines with PLC (Multivac) . ",
       "Developed Root Cause Analysis, Standard Operating Procedure , Automous Maintanence (AM) and Preventive Maintanence(PM) .",
       "Create document and analyze possible safety precautions in plant with HIRARC (Hazard Identification, Risk Assessment and Risk Control) .",
@@ -141,6 +142,7 @@ const experiences = [
     iconBg: "#FFFFFF",
     date: "Jan 2020 - Dec 2020",
     points: [
+      "Part-time Engineer",
       "Draw Design 3D CAD Drawings to suit customer requirements - Fuel Drying System for 245000kg/hr of EFB and rotary dryer to reduce power consumption of boiler with a given budget, space constriction, cost of completion and timeframe of completion.",
       "Experiences of rotation job including planning of project timeline planning, create House Of Quality based on , Plan of Costing , design boiler with particle & stress test simulation and etc.",
       "Compare and showcase different design of Boiler structure with physics simulations program on effectiveness of design to produce palm oil supported with proof of simulation and physical test",
@@ -152,7 +154,7 @@ const experiences = [
     company_name: "JKS Engineering (M) Sdn Bhd",
     icon: jks,
     iconBg: "#FFFFFF",
-    date: "Jan 2020 - Dec 2020",
+    date: "Jun 2021 - May 2022",
     points: [
       "Draw Design 3D CAD Drawings to suit customer requirements - Fuel Drying System for 245000kg/hr of EFB and rotary dryer to reduce power consumption of boiler with a given budget, space constriction, cost of completion and timeframe of completion.",
       "Experiences of rotation job including planning of project timeline planning, create House Of Quality based on , Plan of Costing , design boiler with particle & stress test simulation and etc.",

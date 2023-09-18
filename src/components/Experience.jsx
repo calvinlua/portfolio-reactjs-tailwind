@@ -4,7 +4,7 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-import { motion } from "framer-motion";
+import { motion, useSpring } from "framer-motion";
 import "react-vertical-timeline-component/style.min.css";
 
 import { styles } from "../styles";
@@ -57,11 +57,10 @@ const ExperienceCard = ({ index, experience, icon }) => (
 const Experience = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>My Work Journey</p>
+      <p className={styles.sectionSubText}>My Work Journey</p>
 
-        <h2 className={styles.sectionHeadText}>Job Experience.</h2>
-      </motion.div>
+      <h2 className={styles.sectionHeadText}>Job Experience.</h2>
+
       <div className="mt-20 flex flex-col">
         <VerticalTimeline>
           {/* direct return */}

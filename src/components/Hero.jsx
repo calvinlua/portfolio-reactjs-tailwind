@@ -34,7 +34,7 @@ const Hero = () => {
       </div>
       <ComputersCanvas />
       {/* on xs device bottom-10 but usually bottom-32 */}
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
+      <div className="absolute xs:inset-x-0 xs:bottom-0 bottom-32 w-full flex justify-center items-center">
         {/* anchor tag link */}
         <a href="#about">
           <div
@@ -43,7 +43,7 @@ const Hero = () => {
           >
             <motion.div
               animate={{
-                y: [0, 24, 0], //motion down
+                y: [0, 30, 0], //motion down
               }}
               transition={{
                 duration: 1.5,
