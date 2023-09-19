@@ -1,6 +1,13 @@
 import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, SpotLight, useGLTF } from "@react-three/drei"; //helper class
+import {
+  OrbitControls,
+  Preload,
+  SpotLight,
+  useGLTF,
+  Html,
+} from "@react-three/drei"; //helper class
+import { ArrowHint } from "../hints/ArrowHint.jsx";
 import { extend } from "@react-three/fiber";
 
 import CanvasLoader from "../Loader";
@@ -79,6 +86,9 @@ const ComputersCanvas = () => {
           minPolarAngle={Math.PI / 2}
         />
         <Computers isMobile={isMobile} />
+        <Html justify-center>
+          <ArrowHint />
+        </Html>
       </Suspense>
       <Preload all />
     </Canvas>
