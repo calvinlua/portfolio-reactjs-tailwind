@@ -4,6 +4,7 @@ import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import { LoopRepeat } from "three";
 import About from "./About";
+import { rotate_finger } from "../assets";
 
 const Hero = () => {
   return (
@@ -32,7 +33,9 @@ const Hero = () => {
           </p>
         </div>
       </div>
+
       <ComputersCanvas />
+
       {/* on xs device bottom-10 but usually bottom-32 */}
       <div className="absolute xs:inset-x-0 xs:bottom-0 bottom-32 w-full flex justify-center items-center">
         {/* anchor tag link */}

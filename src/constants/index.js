@@ -156,10 +156,10 @@ const experiences = [
     iconBg: "#FFFFFF",
     date: "Jun 2021 - May 2022",
     points: [
-      "Draw Design 3D CAD Drawings to suit customer requirements - Fuel Drying System for 245000kg/hr of EFB and rotary dryer to reduce power consumption of boiler with a given budget, space constriction, cost of completion and timeframe of completion.",
-      "Experiences of rotation job including planning of project timeline planning, create House Of Quality based on , Plan of Costing , design boiler with particle & stress test simulation and etc.",
-      "Compare and showcase different design of Boiler structure with physics simulations program on effectiveness of design to produce palm oil supported with proof of simulation and physical test",
-      "Improve company’s simulation on stress test on Boiler design with different simulation program like Solidworks , Ansys, Comsol Multiphysics and more",
+      "Design , Improvise and Developed PLC programs for various PLC Machine programs for company's multinational client like Amkor , Western Digital, Nexperia and many more. ",
+      "Create dynamic test unit program for hardware IO testing with quick and fast deployment of PLC programs for other programmers and Factory Acceptance Test (FAT) ",
+      "Provide CI/CD solutions with git and git actions for faster and reliable deployment for PLC programs ",
+      "Create and establish Companys’s Cloud Storage Server OwnCloud X with Linux OS and migration of Company's OwnCloud Server",
     ],
   },
   {
