@@ -7,7 +7,7 @@ import {
   useGLTF,
   Html,
 } from "@react-three/drei"; //helper class
-import { ArrowHint } from "../hints/ArrowHint.jsx";
+// import { ArrowHint } from "../hints/ArrowHint.jsx";
 import { extend } from "@react-three/fiber";
 
 import CanvasLoader from "../Loader";
@@ -86,9 +86,9 @@ const ComputersCanvas = () => {
           minPolarAngle={Math.PI / 2}
         />
         <Computers isMobile={isMobile} />
-        <Html justify-center>
+        {/* <Html center>
           <ArrowHint />
-        </Html>
+        </Html> */}
       </Suspense>
       <Preload all />
     </Canvas>

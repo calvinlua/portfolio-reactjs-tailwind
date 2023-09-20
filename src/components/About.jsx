@@ -57,15 +57,20 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I am a professional fullstack engineer with working background in IoT
-        devices and deep understanding of knowledge in smart devices protocols
-        and PLC. Have worked to developed smart factory.But that doesn't stop me
-        from learning. I am equipped with frontend knowledge like React.js and
-        Vue.js. I am also very experienced backend with C#, Java Springboot,
-        Node.js and Python. My interest in 3D model and web also sparks how I
-        started to develop with this website. I am quick learner and I devised
-        fast creating efficient, scalable , user-friendly solutions that solve
-        real-world problems. Let's work together to bring our ideas to life!
+        I am a seasoned full-stack engineer with a strong professional
+        background in the field of IoT devices, coupled with a profound
+        expertise in smart device protocols and Programmable Logic Controllers
+        (PLC). My experience includes contributing to the development of smart
+        factories, demonstrating my commitment to continuous learning and
+        innovation. My skill set extends to the frontend realm, encompassing
+        technologies such as React.js and Vue.js, while my backend proficiency
+        spans languages and frameworks like C#, Java Spring Boot, Node.js, and
+        Python. My passion for 3D modeling and web development served as the
+        impetus for my involvement in web-based projects.I pride myself on being
+        a fast learner, consistently devising and delivering efficient,
+        scalable, and user-friendly solutions that address real-world
+        challenges. I am eager to collaborate with you to transform our ideas
+        into reality. Let's work together to bring our ideas to life!
       </motion.p>
 
       {/* display cards, spread the title */}

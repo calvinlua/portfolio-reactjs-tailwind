@@ -35,12 +35,12 @@ const Hero = () => {
       </div>
 
       <ComputersCanvas />
-      <motion.div fade>
+      {/* <motion.div fade>
         <img
           src={rotate_finger}
           className="relative h-[60px] w-[50px] flex content-center bottom-48 self-center"
         />
-      </motion.div>
+      </motion.div> */}
       {/* on xs device bottom-10 but usually bottom-32 */}
       <div className="absolute xs:inset-x-0 xs:bottom-0 bottom-32 w-full flex justify-center items-center">
         {/* anchor tag link */}
