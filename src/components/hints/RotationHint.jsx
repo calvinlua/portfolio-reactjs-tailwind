@@ -7,7 +7,7 @@ const RotationHint = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setShowHint((prev) => !prev); // Toggle the hint's visibility
-    }, 10000); // Adjust the interval as needed (e.g., every 2 seconds)
+    }, 5000); // Adjust the interval as needed (e.g., every 2 seconds)
 
     return () => {
       clearInterval(interval);

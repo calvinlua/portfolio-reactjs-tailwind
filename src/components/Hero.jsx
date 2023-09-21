@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion"; //animation
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
+
 import { LoopRepeat } from "three";
 import About from "./About";
 import { rotate_finger } from "../assets";

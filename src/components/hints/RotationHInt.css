@@ -1,13 +1,27 @@
 .rotation-hint {
   position: absolute;
-  top: 10%;
+  top: 90%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 1000%);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  animation: fadeInOut 5s ease-in-out infinite alternate; /* Adjust the duration as needed */
+  animation: fadeInOut 2.5s ease-in-out infinite alternate; /* Adjust the duration as needed */
+}
+
+/* Media query for screens with a width smaller than 450px */
+@media screen and (max-width: 450px) {
+  .rotation-hint {
+    transform: translate(
+      -50%,
+      500%
+    ); /* Adjust translateY for smaller screens */
+  }
+
+  .hint-text {
+    font-size: 8px; /* Adjust the font size as needed */
+  }
 }
 
 .arrow {
@@ -15,13 +29,14 @@
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 20px solid #007bff; /* Adjust the arrow color */
+  border-top: 20px solid #800080; /* Adjust the arrow color */
   transform: rotate(90deg);
   margin-right: 8px; /* Adjust the spacing between arrow and text */
 }
 
 .hint-text {
   font-size: 16px; /* Adjust the font size as needed */
+  color: solid #ffffff;
 }
 
 @keyframes fadeInOut {
