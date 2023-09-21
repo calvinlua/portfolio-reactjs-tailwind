@@ -7,7 +7,7 @@ import {
   useGLTF,
   Html,
 } from "@react-three/drei"; //helper class
-// import { ArrowHint } from "../hints/ArrowHint.jsx";
+import RotationHint from "../hints/RotationHint.jsx";
 import { extend } from "@react-three/fiber";
 
 import CanvasLoader from "../Loader";
@@ -86,9 +86,9 @@ const ComputersCanvas = () => {
           minPolarAngle={Math.PI / 2}
         />
         <Computers isMobile={isMobile} />
-        {/* <Html center>
-          <ArrowHint />
-        </Html> */}
+        <Html>
+          <RotationHint />
+        </Html>
       </Suspense>
       <Preload all />
     </Canvas>
