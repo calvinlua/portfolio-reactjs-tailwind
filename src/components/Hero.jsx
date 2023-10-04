@@ -1,4 +1,4 @@
-import React from "react";
+import { Suspense, useEffect, useState } from "react";
 import { motion } from "framer-motion"; //animation
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
@@ -8,6 +8,30 @@ import About from "./About";
 import { rotate_finger } from "../assets";
 
 const Hero = () => {
+  //check mobile
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Function to check window width and update state
+    const checkWindowWidth = () => {
+      if (window.innerWidth < 450) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+
+    // Add event listener to check window width on resize
+    window.addEventListener("resize", checkWindowWidth);
+
+    // Initial check when component mounts
+    checkWindowWidth();
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", checkWindowWidth);
+    };
+  }, []);
   return (
     //fullscreen
     <section className={"relative w-full h-screen mx-auto"}>
@@ -45,24 +69,26 @@ const Hero = () => {
       {/* on xs device bottom-10 but usually bottom-32 */}
       <div className="absolute xs:inset-x-0 xs:bottom-0 bottom-32 w-full flex justify-center items-center">
         {/* anchor tag link */}
-        <a href="#about">
-          <div
-            className="w-[35] h-[64px] rounded-3xl border-4 border-secondary
+        {isMobile ? (
+          <a href="#about">
+            <div
+              className="w-[35] h-[64px] rounded-3xl border-4 border-secondary
               flex justify-center items-start p-2"
-          >
-            <motion.div
-              animate={{
-                y: [0, 30, 0], //motion down
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="w-3 h-3 rounded-full bg-secondary mb-1"
-            />
-          </div>
-        </a>
+            >
+              <motion.div
+                animate={{
+                  y: [0, 30, 0], //motion down
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+                className="w-3 h-3 rounded-full bg-secondary mb-1"
+              />
+            </div>
+          </a>
+        ) : null}
       </div>
     </section>
   );
