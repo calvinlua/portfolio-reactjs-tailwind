@@ -150,7 +150,7 @@ const experiences = [
     ],
   },
   {
-    title: "R&D Automotion Software Engineer Lead",
+    title: "R&D Automation Software Engineer Lead",
     company_name: "JKS Engineering (M) Sdn Bhd",
     icon: jks,
     iconBg: "#FFFFFF",
