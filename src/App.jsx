@@ -25,7 +25,7 @@ const App = () => {
         </div>
         <About />
         <Experience />
-        <HtmlViewer></HtmlViewer>
+        <Laptop />
         {/* <Tech /> */}
         {/* <Works />
         <Feedbacks />
