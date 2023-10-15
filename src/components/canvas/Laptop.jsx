@@ -7,8 +7,6 @@ import {
   useGLTF,
 } from "@react-three/drei";
 
-import "./laptop.css";
-
 //helper class
 // import RotationHint from "../hints/RotationHint.jsx";
 // import { extend } from "@react-three/fiber";
@@ -26,16 +24,19 @@ const Laptop = ({ isMobile }) => {
       <Environment preset="dawn" />
       {/* limit y axis */}
 
-      <PresentationControls global polar={[0.4, 0.2]} azimuth={[-0.4, 0.2]}>
-        <primitive object={laptop.scene} position-y={[-1, 2]}>
+      <PresentationControls>
+        <primitive object={laptop.scene}>
           <Html
             wrapperClass="laptop"
-            position={[0, 1.5, -1.5]}
+            position={[0, 1.3, -1]}
             transform
-            distanceFactor={1.16}
-            rotation-rotateX={-0.25}
+            distanceFactor={4}
+            translateX={-0.6}
           >
-            <iframe src=""></iframe>
+            <iframe
+              src=""
+              className="w-1025px h-670px border-none border-radius-2px"
+            ></iframe>
           </Html>
         </primitive>
       </PresentationControls>
