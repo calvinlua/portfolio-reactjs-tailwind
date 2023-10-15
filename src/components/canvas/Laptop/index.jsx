@@ -1,7 +1,7 @@
 import "./styles.css";
 import { ReactDOM } from "react-dom/client";
 import { Canvas } from "@react-three/fiber";
-import Laptop from "./Laptop.jsx";
+import Laptop from "./Laptop1.jsx";
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 

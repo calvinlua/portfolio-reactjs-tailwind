@@ -9,8 +9,9 @@ import {
   Tech,
   Works,
   StarsCanvas,
+  Showcase,
 } from "./components";
-import Laptop from "./components/canvas/Laptop/Laptop";
+import Laptop from "./components/canvas/Laptop/Laptop1";
 
 const App = () => {
   return (
@@ -25,7 +26,7 @@ const App = () => {
         </div>
         <About />
         <Experience />
-        <Laptop />
+        <Showcase />
         {/* <Tech /> */}
         {/* <Works />
         <Feedbacks />

@@ -11,7 +11,8 @@ export default function Laptop() {
   );
   return (
     <>
-      <Environment preset="dawn" />
+      {/* <Environment preset="dawn" /> */}
+
       {/* limit y axis */}
       <PresentationControls global polar={[0.4, 0.2]} azimuth={[-0.4, 0.2]}>
         <primitive object={laptop.scene} position-y={[-1, 2]}>
