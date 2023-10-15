@@ -1,17 +1,19 @@
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
   Html,
   Environment,
   PresentationControls,
   useGLTF,
+  OrbitControls,
+  Preload,
 } from "@react-three/drei";
 
 //helper class
 // import RotationHint from "../hints/RotationHint.jsx";
 // import { extend } from "@react-three/fiber";
 
-// import CanvasLoader from "../Loader";
+import CanvasLoader from "../Loader";
 
 //take isMobile as a prop
 const Laptop = ({ isMobile }) => {
@@ -25,18 +27,42 @@ const Laptop = ({ isMobile }) => {
       {/* limit y axis */}
 
       <PresentationControls>
-        <primitive object={laptop.scene}>
+        <primitive
+          object={laptop.scene}
+          position={isMobile ? [0, -2, -1] : [0, -2, -1.0]}
+          zoom={true}
+        >
           <Html
             wrapperClass="laptop"
-            position={[0, 1.3, -1]}
+            position={[0, 2, -1]}
             transform
             distanceFactor={4}
-            translateX={-0.6}
           >
+            {/* https://www.youtube.com/watch?v=hJwIs4FYV7E */}
+            {/* <iframe
+              src="https://www.youtube.com/embed/v=hJwIs4FYV7E?enablejsapi=1"
+              className="w-{1025px} h-{690px} border-none rounded-sm"
+            ></iframe> */}
+
             <iframe
-              src=""
-              className="w-1025px h-670px border-none border-radius-2px"
+              width="302"
+              height="200"
+              src="https://www.youtube-nocookie.com/embed/hJwIs4FYV7E?si=r0704yLn13VLxwNO&amp;controls=1&loop=1&autoplay=1"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              className="rounded-xl"
             ></iframe>
+            {/* <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube-nocookie.com/embed/hJwIs4FYV7E?si=r0704yLn13VLxwNO&amp;controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe> */}
           </Html>
         </primitive>
       </PresentationControls>
@@ -78,7 +104,16 @@ const LaptopCanvas = () => {
         position: [-3, 1.5, 4],
       }}
     >
-      <Laptop />
+      <Suspense fallback={<CanvasLoader />}>
+        <OrbitControls
+          enablePan={false}
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 2} //enable left and right turn only >> angle
+          minPolarAngle={Math.PI / 2}
+        />
+        <Laptop isMobile={isMobile} />
+      </Suspense>
+      <Preload all />
     </Canvas>
   );
 };

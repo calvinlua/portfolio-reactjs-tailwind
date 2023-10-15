@@ -21,7 +21,7 @@ export default function Laptop() {
             position={[0, 1.5, -1.5]}
             transform
             distanceFactor={1.16}
-            rotation-rotateX={-0.25}
+            rotation={(0, 1, 0, "XYZ")}
           >
             <iframe src="www.linkedin.com/in/calvinlua"></iframe>
           </Html>
