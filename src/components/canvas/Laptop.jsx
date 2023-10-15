@@ -23,35 +23,30 @@ const Laptop = ({ isMobile }) => {
 
   return (
     <>
-      <Environment preset="dawn" />
+      <Environment preset="warehouse" />
       {/* limit y axis */}
 
       <PresentationControls>
         <primitive
           object={laptop.scene}
-          position={isMobile ? [0, -2, -1] : [0, -2, -1.0]}
+          position={isMobile ? [0, -2, -1] : [0, -2, 0]}
           zoom={true}
         >
           <Html
-            wrapperClass="laptop"
-            position={[0, 2, -1]}
+            position={[0, 1.98, -1.4]}
             transform
             distanceFactor={4}
+            rotation-x={-Math.PI / 12}
+            translateZ={100}
+            occlude
           >
-            {/* https://www.youtube.com/watch?v=hJwIs4FYV7E */}
-            {/* <iframe
-              src="https://www.youtube.com/embed/v=hJwIs4FYV7E?enablejsapi=1"
-              className="w-{1025px} h-{690px} border-none rounded-sm"
-            ></iframe> */}
-
+            {/* macbook screen ratio width 8 : 5 height */}
             <iframe
-              width="302"
+              width="290"
               height="200"
               src="https://www.youtube-nocookie.com/embed/hJwIs4FYV7E?si=r0704yLn13VLxwNO&amp;controls=1&loop=1&autoplay=1"
               title="YouTube video player"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
               className="rounded-xl"
             ></iframe>
             {/* <iframe
@@ -108,8 +103,8 @@ const LaptopCanvas = () => {
         <OrbitControls
           enablePan={false}
           enableZoom={false}
-          maxPolarAngle={Math.PI / 2} //enable left and right turn only >> angle
-          minPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2.2}
+          maxPolarAngle={Math.PI / 2.2}
         />
         <Laptop isMobile={isMobile} />
       </Suspense>
