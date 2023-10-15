@@ -29,11 +29,11 @@ const Laptop = ({ isMobile }) => {
       <PresentationControls>
         <primitive
           object={laptop.scene}
-          position={isMobile ? [0, -2, -1] : [0, -2, 0]}
+          position={isMobile ? [0, -2, -5] : [0, -2, 0]}
           zoom={true}
         >
           <Html
-            position={[0, 1.98, -1.4]}
+            position={isMobile ? [0, 1.96, -1.51] : [0, 1.98, -1.4]}
             transform
             distanceFactor={4}
             rotation-x={-Math.PI / 12}
@@ -101,7 +101,7 @@ const LaptopCanvas = () => {
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
-          enablePan={false}
+          enablePan={true}
           enableZoom={false}
           minPolarAngle={Math.PI / 2.2}
           maxPolarAngle={Math.PI / 2.2}
