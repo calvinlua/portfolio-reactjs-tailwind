@@ -29,7 +29,7 @@ const Laptop = ({ isMobile }) => {
       <PresentationControls>
         <primitive
           object={laptop.scene}
-          position={isMobile ? [0, -2, -5] : [0, -2, 0]}
+          position={isMobile ? [0, -1, -5] : [0, -1.8, 0]}
           zoom={true}
         >
           <Html
@@ -101,7 +101,7 @@ const LaptopCanvas = () => {
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
-          enablePan={true}
+          enablePan={false}
           enableZoom={false}
           minPolarAngle={Math.PI / 2.2}
           maxPolarAngle={Math.PI / 2.2}
