@@ -1,5 +1,5 @@
-import { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Suspense, useEffect, useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import {
   Html,
   Environment,
@@ -19,37 +19,53 @@ import CanvasLoader from "../Loader";
 const Laptop = ({ isMobile }) => {
   //import GLTF model - import the scene
   const laptop = useGLTF("./laptop/scene.gltf");
+  const group = useRef();
   console.log(isMobile);
 
-  return (
-    <>
-      <Environment preset="warehouse" />
-      {/* limit y axis */}
+  // useFrame(() => {});
 
-      <PresentationControls>
+  return (
+    <group ref={group}>
+      <PresentationControls
+        enabled={true} // the controls can be disabled by setting this to false
+        global={true} // Spin globally or by dragging the model
+        cursor={true} // Whether to toggle cursor style on drag
+        snap={false} // Snap-back to center (can also be a spring config)
+        speed={1} // Speed factor
+        zoom={1} // Zoom factor when half the polar-max is reached
+        rotation={[0, 0, 0]} // Default rotation
+        polar={[0, Math.PI / 2]} // Vertical limits
+        azimuth={[-Infinity, Infinity]} // Horizontal limits
+        config={{ mass: 1, tension: 170, friction: 26 }} // Spring config
+        // domElement={events.connected} // The DOM element events for this controller will attach to
+      >
+        <mesh />
+
+        <Environment preset="warehouse" />
         <primitive
           object={laptop.scene}
           position={isMobile ? [0, -1, -5] : [0, -1.8, 0]}
           zoom={true}
+        />
+
+        <Html
+          position={isMobile ? [0, 1.96, -1.51] : [0, 0.19, -1.52]}
+          transform
+          distanceFactor={4}
+          rotation-x={-Math.PI / 12}
+          translateZ={100}
+          occlude
         >
-          <Html
-            position={isMobile ? [0, 1.96, -1.51] : [0, 1.98, -1.4]}
-            transform
-            distanceFactor={4}
-            rotation-x={-Math.PI / 12}
-            translateZ={100}
-            occlude
-          >
-            {/* macbook screen ratio width 8 : 5 height */}
-            <iframe
-              width="290"
-              height="200"
-              src="https://www.youtube-nocookie.com/embed/hJwIs4FYV7E?si=r0704yLn13VLxwNO&amp;controls=1&loop=1&autoplay=1"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              className="rounded-xl"
-            ></iframe>
-            {/* <iframe
+          {/* macbook screen ratio width 8 : 5 height */}
+          <iframe
+            width="290"
+            height="200"
+            src="https://www.youtube-nocookie.com/embed/hJwIs4FYV7E?si=r0704yLn13VLxwNO&amp;controls=1&loop=1&autoplay=1"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            className="rounded-xl"
+          ></iframe>
+          {/* <iframe
               width="560"
               height="315"
               src="https://www.youtube-nocookie.com/embed/hJwIs4FYV7E?si=r0704yLn13VLxwNO&amp;controls=0"
@@ -58,10 +74,9 @@ const Laptop = ({ isMobile }) => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
             ></iframe> */}
-          </Html>
-        </primitive>
+        </Html>
       </PresentationControls>
-    </>
+    </group>
   );
 };
 
