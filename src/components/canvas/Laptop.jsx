@@ -60,9 +60,9 @@ const Laptop = ({ isMobile }) => {
           <iframe
             width="290"
             height="200"
-            src="https://www.youtube-nocookie.com/embed/hJwIs4FYV7E?si=r0704yLn13VLxwNO&amp;controls=1&loop=1&autoplay=1"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            src="https://e.notionhero.io/e1/p/26242b1-17e440db8350455b28d16cf0b039603"
+            // title="YouTube video player"
+            // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             className="rounded-xl"
           ></iframe>
           {/* <iframe
