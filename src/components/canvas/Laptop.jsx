@@ -241,7 +241,6 @@ const Laptop = ({ isMobile }) => {
   // useFrame(() => {});
 
   return (
-<<<<<<< Updated upstream
     <group ref={group}>
       <PresentationControls
         enabled={true} // the controls can be disabled by setting this to false
@@ -294,29 +293,6 @@ const Laptop = ({ isMobile }) => {
         </Html>
       </PresentationControls>
     </group>
-=======
-    <PresentationControls
-      enabled={true} // the controls can be disabled by setting this to false
-      global={true} // Spin globally or by dragging the model
-      cursor={true} // Whether to toggle cursor style on drag
-      snap={false} // Snap-back to center (can also be a spring config)
-      speed={1} // Speed factor
-      zoom={1} // Zoom factor when half the polar-max is reached
-      // rotation={[0, 0, 0]} // Default rotation
-      polar={[0, Math.PI / 4]} // Vertical limits
-      azimuth={[-Infinity, Infinity]} // Horizontal limits
-      config={{ mass: 1, tension: 170, friction: 26 }} // Spring config
-      position={[0, -3, 0]}
-      // domElement={events.connected} // The DOM element events for this controller will attach to
-    >
-      <Suspense fallback={null}>
-        <group rotation={[0, 0, 0]} position={[0, -1, 0]}>
-          <Model />
-        </group>
-        <Environment preset="city" />
-      </Suspense>
-    </PresentationControls>
->>>>>>> Stashed changes
   );
 };
 
