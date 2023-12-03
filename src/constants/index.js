@@ -176,7 +176,7 @@ const experiences = [
     ],
   },
   {
-    title: "IoT Engineer",
+    title: "Full Stack (IoT) Engineer",
     company_name: "Hyundai Motor Innovation Center Singapore(HMGICS) Pte. Ltd.",
     icon: hyundai,
     iconBg: "#FFFFFF",
