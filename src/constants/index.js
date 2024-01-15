@@ -182,6 +182,7 @@ const experiences = [
     iconBg: "#FFFFFF",
     date: "Feb 2023 - Present",
     points: [
+      "Creating Frontend and Backend Website to process data from PLC and have high-level analysis on the PLC data for visualisation",
       "Developing and maintaining web applications using Vue.js, Node.js and Springboot Java , implementing responsive design and ensuring cross-browser compatibility for factory applications  ",
       "Handling Digital Factory Metaverse Backend ",
       "Design and maintain IoT communication protocol between hardware and application",
