@@ -1,6 +1,6 @@
 // utility - framer motion animation
 
-export const textVariant = (delay) => {
+const textVariant = (delay) => {
   return {
     hidden: {
       y: -50,
@@ -18,7 +18,7 @@ export const textVariant = (delay) => {
   };
 };
 
-export const fadeIn = (direction, type, delay, duration) => {
+const fadeIn = (direction, type, delay, duration) => {
   return {
     hidden: {
       x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
@@ -39,7 +39,7 @@ export const fadeIn = (direction, type, delay, duration) => {
   };
 };
 
-export const zoomIn = (delay, duration) => {
+const zoomIn = (delay, duration) => {
   return {
     hidden: {
       scale: 0,
@@ -58,7 +58,7 @@ export const zoomIn = (delay, duration) => {
   };
 };
 
-export const slideIn = (direction, type, delay, duration) => {
+const slideIn = (direction, type, delay, duration) => {
   return {
     hidden: {
       x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
@@ -77,7 +77,7 @@ export const slideIn = (direction, type, delay, duration) => {
   };
 };
 
-export const staggerContainer = (staggerChildren, delayChildren) => {
+const staggerContainer = (staggerChildren, delayChildren) => {
   return {
     hidden: {},
     show: {
@@ -88,3 +88,5 @@ export const staggerContainer = (staggerChildren, delayChildren) => {
     },
   };
 };
+
+export { textVariant, fadeIn, zoomIn, slideIn, staggerContainer };
